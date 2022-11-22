@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import Chat from "../abis/Chat.json"
+import Chat from "../../abis/Chat.json"
 
 const MessageRoom = ({
   userAddress

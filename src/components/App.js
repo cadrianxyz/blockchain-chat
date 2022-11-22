@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Web3 from 'web3';
 import './App.css';
 
-import MessageRoom from "./MessageRoom";
+import MessageRoom from "./MessageRoom/index";
 
 const App = () => {
   const [isConnected, setIsConnected] = useState(false);
