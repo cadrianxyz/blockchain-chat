@@ -377,9 +377,9 @@ class Messenger
         let index = this.msSkip.findIndex(i => i.publicKey == header.publicKey && i.n_s == header.n_r);
         if (index > 0)
         {
-            const messageKey = this.msSkip[i].msgKey;
+            const messageKey = this.msSkip[index].msgKey;
             this.msSkip.splice(index, 1);
-            return decryptMsg(messageKey, cipherText, header, hashHeader);
+            return this.decryptMsg(messageKey, cipherText, header, hashHeader);
         }
         return null;
     }
