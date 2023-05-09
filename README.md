@@ -4,6 +4,8 @@ Many popular messaging applications require a centralized server to deliver mess
 
 ## Chat System
 
+![blockchain-infra](docs/blockchat-infra.png)
+
 Our project can be split into four major components:
 - the implementation of the blockchain network,
 - smart contracts,
@@ -21,6 +23,8 @@ Using blockchain technology helps ensure message integrity and authenticity.
 Smart contracts act as the delivery mechanism on the blockchain that allows users to send and fetch messages from the blockchain. Our system’s messaging logic is governed largely by smart contracts that are written on top of the Ethereum blockchain. 
 The smart contracts are written in Solidity, a high-level programming language specifically created for the development of smart contracts on a number of blockchain networks. Conveniently, Solidity features functionality that supports modular design and data type validation. 
 
+![blockchain-smart-contract](docs/blockchat-smart-contract.png)
+
 ### Message Encryption - [Signal](from https://signal.org/en/) Protocol
 
 To ensure confidentiality, the messages are encrypted using the Signal protocol, which utilizes the [Double Ratchet algorithm](https://signal.org/docs/specifications/doubleratchet/
@@ -28,6 +32,8 @@ To ensure confidentiality, the messages are encrypted using the Signal protocol,
 The main goal of this algorithm is to be able to use unique message keys for each message and to allow parties to communicate without having to exchange the needed decryption keys beforehand.
 
 Messages are encrypted using AES-256 in CBC cipher mode and an HMAC will be used to provide integrity. 
+
+![blockchain-dr](docs/blockchat-dr.png)
 
 ### Local Storage
 
