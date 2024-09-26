@@ -5,6 +5,7 @@
   "proxy": "http://localhost:3001",
   "type": "module",
   "dependencies": {
+    "@material-ui/icons": "^4.11.3",
     "babel-polyfill": "6.26.0",
     "babel-preset-env": "1.7.0",
     "babel-preset-es2015": "6.24.1",

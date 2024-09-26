@@ -204,4 +204,8 @@ router
             return res.sendStatus(400);
     })
 
+    .get('/chatAddress', async (req, res) => {
+        return res.status(200).send(Object.keys(allMessages));
+    })
+
 export default router;

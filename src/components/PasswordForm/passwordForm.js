@@ -45,7 +45,7 @@ class PasswordForm extends React.Component {
     }
 
     async setPassword() {
-        var response = await fetch('/chat/createPassword', {
+        await fetch('/chat/createPassword', {
             method: 'POST',
             headers: jsonHeader,
             body: JSON.stringify({ password: this.state.value })
@@ -70,7 +70,7 @@ class PasswordForm extends React.Component {
             <form onSubmit={this.handleSubmit}>
                 <label>
                     Password:
-                    <input type="text" value={this.state.value} onChange={this.handleChange} />
+                    <input type="password" value={this.state.value} onChange={this.handleChange} />
                 </label>
                 <input type="submit" value="Submit" />
             </form>

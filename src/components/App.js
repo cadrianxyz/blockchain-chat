@@ -6,6 +6,8 @@ import MessageRoom from "./MessageRoom/index";
 import PasswordForm from './PasswordForm/passwordForm';
 
 const App = () => {
+  const debug = false;
+
   const [isConnected, setIsConnected] = useState(false);
   const [userPubAddress, setUserPubAddress] = useState(null);
   const [userBalance, setUserBalance] = useState(0);
@@ -61,19 +63,22 @@ const App = () => {
 
   return (
     <div>
-      <PasswordForm authCallback={auth} />
-      {isAuth &&
+      {isAuth ?
         <>
-          <h1>Current Address: {userPubAddress}</h1>
-          <div>Balance: {userBalance}</div>
+          {debug && <>
+            <h1>Current Address: {userPubAddress}</h1>
+            <div>Balance: {userBalance}</div>
+          </>}
           {isConnected &&
             <MessageRoom
+              userBalance={userBalance}
               userAddress={userPubAddress}
             />
           }
         </>
-      }
+      : <PasswordForm authCallback={auth} />}
     </div>
+    
   )
 }
 
